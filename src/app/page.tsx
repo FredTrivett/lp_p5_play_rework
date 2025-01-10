@@ -5,8 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { FaWindows } from 'react-icons/fa';
 import { IoIosSearch } from 'react-icons/io';
-import { FaTrash, FaExclamationTriangle, FaShieldAlt, FaChartLine, FaUserShield, FaLock, FaCloudUploadAlt, FaUserSecret, FaEnvelopeOpenText, FaLaptopCode, FaUsers } from 'react-icons/fa';
-import { BsLightningChargeFill } from 'react-icons/bs';
+import { FaTrash, FaExclamationTriangle, FaShieldAlt, FaLock, FaCloudUploadAlt, FaUserSecret, FaEnvelopeOpenText, FaLaptopCode, FaUsers } from 'react-icons/fa';
 
 const notifications = [
   'Drive Overload',
@@ -58,7 +57,7 @@ export default function Home() {
     return () => {
       clearTimeout(initialDelay);
     };
-  }, []);
+  }, [visibleNotifications.length]);
 
   return (
     <div className="relative overflow-hidden">
@@ -72,7 +71,14 @@ export default function Home() {
 
       <div className="relative min-h-screen bg-gradient-to-br from-gray-900 to-blue-900 text-black pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src="/desktop.webp" alt="Computer Screen" className="w-full h-auto" />
+          <img
+            src="/desktop.webp"
+            alt="Computer Screen"
+            className="w-full h-auto"
+            width={1920}
+            height={1080}
+
+          />
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 h-12 bg-gray-800 flex items-center px-4 space-x-2">
@@ -243,6 +249,8 @@ export default function Home() {
                 src="/manadata.png"
                 alt="Game Screenshot"
                 className="w-full rounded-lg shadow-md"
+                width={500}
+                height={300}
               />
             </motion.div>
             <motion.div
@@ -255,7 +263,7 @@ export default function Home() {
               <p className="mb-6">
                 Immerse yourself in an interactive game that showcases the importance of data management and security. Take on our challenge, eliminate the viruses and save the broken devices.
                 <br></br><br></br>
-                Thank's for saving the world !
+                Thank&apos;s for saving the world !
               </p>
               <Link href="https://fp-lajudie.fr/Nuit%20du%20code/menu.html">
                 <button className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300">
